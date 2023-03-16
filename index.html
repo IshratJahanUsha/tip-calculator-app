@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- css link -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <h1 class="calculator_title">Tip Calculator</h1>
+
+  <section class="tip_calculator">
+
+    <div class="calculator_container">
+
+      <div class="bill_container">
+
+        <div class="input_title">
+          <label for="total_bill">Bill</label>
+          <span class="error_message">Can't be zero</span>
+        </div>
+
+        <div class="input_field">
+          <input onblur="totalBillAmount()" type="number" name="" id="" placeholder="0" class="total_bill">
+          <img src="images/icon-dollar.svg" alt="">
+        </div>
+
+      </div>
+
+      <div class="tip_container">
+
+        <label for="">Select Tip %</label>
+
+        <div class="tip_input">
+          <button onclick="totalBillAmount()" class="tip_amount" value="0.05">5%</button>
+          <button onclick="totalBillAmount()" class="tip_amount" value="0.1">10%</button>
+          <button onclick="totalBillAmount()" class="tip_amount" value="0.15">15%</button>
+          <button onclick="totalBillAmount()" class="tip_amount" value="0.25">25%</button>
+          <button onclick="totalBillAmount()" class="tip_amount" value="0.5">50%</button>
+          <input onblur="totalBillAmount()" onchange="customTipAmount()" type="number" min="1" max="100" class="custom_tip_amount" placeholder="Custom">
+        </div>
+
+      </div>
+
+      <div class="people_container">
+
+        <div class="input_title">
+          <label for="">Number of People</label>
+          <span class="error_message">Can't be zero</span>
+        </div>
+
+        <div class="input_field">
+          <input onblur="totalBillAmount()" type="number" placeholder="0" class="people_number">
+          <img src="images/icon-person.svg" alt="">
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="result_container">
+
+      <div class="tip_amount_container">
+
+        <div class="tip_amount_text">
+          <p>Tip Amount</p>
+          <span>/ person</span>
+        </div>
+
+        <p class="tip_amount_result">$<span class="tip_per-person">00.00</span></p>
+
+      </div>
+
+      <div class="tip_amount_container">
+
+        <div class="tip_amount_text">
+          <p>Total</p>
+          <span>/ person</span>
+        </div>
+
+        <p class="tip_amount_result">$<span class="total_per-person">00.00</span></p>
+
+      </div>
+
+      <button class="reset_btn">RESET</button>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
