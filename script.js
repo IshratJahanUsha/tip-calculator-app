@@ -73,9 +73,9 @@ tipAmountBtns.forEach((button, num) => {
 
 tipAmountBtns[0].click()
 
-// totalBill.addEventListener('focusout', () => {
-//     tipAmountBtns[0].click()
-// })
+totalBill.addEventListener('focusout', () => {
+    tipAmountBtns[0].click()
+})
 
 
 // for custom tip
