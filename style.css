@@ -117,8 +117,6 @@ input.success {
     left: 1rem;
 }
 
-.calculator_container {}
-
 .calculator_container .tip_container {
     margin-bottom: 1.5rem;
 }
@@ -170,7 +168,7 @@ input.success {
 .error_message{
     color: rgb(253, 124, 101);
     letter-spacing: 1px;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 .error_message.active{
     visibility: visible;

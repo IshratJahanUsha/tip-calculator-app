@@ -31,7 +31,7 @@
         </div>
 
         <div class="input_field">
-          <input onblur="totalBillAmount()" type="number" name="" id="" placeholder="0" class="total_bill">
+          <input oninput="totalBillAmount()" type="number" name="" id="" placeholder="0" class="total_bill">
           <img src="images/icon-dollar.svg" alt="">
         </div>
 
@@ -47,7 +47,7 @@
           <button onclick="totalBillAmount()" class="tip_amount" value="0.15">15%</button>
           <button onclick="totalBillAmount()" class="tip_amount" value="0.25">25%</button>
           <button onclick="totalBillAmount()" class="tip_amount" value="0.5">50%</button>
-          <input onblur="totalBillAmount()" onchange="customTipAmount()" type="number" min="1" max="100" class="custom_tip_amount" placeholder="Custom">
+          <input oninput="totalBillAmount()" oninput="customTipAmount()" type="number" min="1" max="100" class="custom_tip_amount" placeholder="Custom">
         </div>
 
       </div>
@@ -60,7 +60,7 @@
         </div>
 
         <div class="input_field">
-          <input onblur="totalBillAmount()" type="number" placeholder="0" class="people_number">
+          <input oninput="totalBillAmount()" type="number" placeholder="0" class="people_number">
           <img src="images/icon-person.svg" alt="">
         </div>
 

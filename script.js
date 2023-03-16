@@ -16,6 +16,8 @@ let tipAmount;
 
 let totalBillAmount = () => {
 
+    // perPersonBillAmount.innerHTML = ''
+
     let perPersonTip = tipAmount / totalPeople.value
 
     perPersonTipAmount.innerHTML = perPersonTip.toFixed(2)
@@ -23,19 +25,10 @@ let totalBillAmount = () => {
     let perPersonTotalBill = totalBill.value / totalPeople.value + perPersonTip
 
     perPersonBillAmount.innerHTML = perPersonTotalBill.toFixed(2)
+
 }
 
 // for error 
-totalPeople.addEventListener('input', () => {
-
-    if (totalPeople.value == 0 || totalPeople.value < 0) {
-
-        errorMessage.classList.add('active')
-
-    } else {
-        errorMessage.classList.remove('active')
-    }
-})
 totalBill.addEventListener('input', () => {
 
     if (totalBill.value == 0 || totalBill.value < 0) {
@@ -45,7 +38,18 @@ totalBill.addEventListener('input', () => {
     } else {
         errorMessage.classList.remove('active')
     }
-})
+});
+
+totalPeople.addEventListener('input', () => {
+
+    if (totalPeople.value == 0 || totalPeople.value < 0) {
+
+        errorMessage.classList.add('active')
+
+    } else {
+        errorMessage.classList.remove('active')
+    }
+});
 
 
 // for tip buttons 
@@ -68,6 +72,7 @@ tipAmountBtns.forEach((button, num) => {
 })
 
 tipAmountBtns[0].click()
+tipAmountBtns[0].classList.add('active')
 
 totalBill.addEventListener('focusout', () => {
     tipAmountBtns[0].click()
