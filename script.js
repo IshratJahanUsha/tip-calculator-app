@@ -15,6 +15,7 @@ const errorMessage = document.querySelector('.error_message-1'),
 let tipAmount;
 totalPeople.value = 1;
 
+// total tip calculation
 let totalBillAmount = () => {
 
     let perPersonTip = tipAmount / totalPeople.value
@@ -26,29 +27,6 @@ let totalBillAmount = () => {
     perPersonBillAmount.innerHTML = perPersonTotalBill.toFixed(2)
 
 }
-
-// for error 
-totalBill.addEventListener('input', () => {
-
-    if (totalBill.value == 0 || totalBill.value < 0) {
-
-        errorMessage.classList.add('active')
-
-    } else {
-        errorMessage.classList.remove('active')
-    }
-});
-
-totalPeople.addEventListener('input', () => {
-
-    if (totalPeople.value == 0 || totalPeople.value < 0) {
-
-        errorMessage2.classList.add('active')
-
-    } else {
-        errorMessage2.classList.remove('active')
-    }
-});
 
 
 // for tip buttons 
@@ -87,7 +65,32 @@ customTipBtn.addEventListener('input', () => {
 
 customTipBtn.addEventListener('input', () => {
     tipAmount = totalBill.value * (customTipBtn.value / 100)
+    console.log(tipAmount)
 })
+
+
+// for error 
+totalBill.addEventListener('input', () => {
+
+    if (totalBill.value == 0 || totalBill.value < 0) {
+
+        errorMessage.classList.add('active')
+
+    } else {
+        errorMessage.classList.remove('active')
+    }
+});
+
+totalPeople.addEventListener('input', () => {
+
+    if (totalPeople.value == 0 || totalPeople.value < 0) {
+
+        errorMessage2.classList.add('active')
+
+    } else {
+        errorMessage2.classList.remove('active')
+    }
+});
 
 // let customTipAmount = () => {
 //     tipAmount = totalBill.value * (customTipBtn.value / 100)
