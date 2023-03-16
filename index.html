@@ -27,7 +27,7 @@
 
         <div class="input_title">
           <label for="total_bill">Bill</label>
-          <span class="error_message">Can't be zero</span>
+          <span class="error_message-1">Can't be zero</span>
         </div>
 
         <div class="input_field">
@@ -47,7 +47,7 @@
           <button onclick="totalBillAmount()" class="tip_amount" value="0.15">15%</button>
           <button onclick="totalBillAmount()" class="tip_amount" value="0.25">25%</button>
           <button onclick="totalBillAmount()" class="tip_amount" value="0.5">50%</button>
-          <input oninput="totalBillAmount()" oninput="customTipAmount()" type="number" min="1" max="100" class="custom_tip_amount" placeholder="Custom">
+          <input oninput="totalBillAmount()" onchange="customTipAmount()" type="number" min="0" max="100" class="custom_tip_amount" placeholder="Custom">
         </div>
 
       </div>
@@ -56,7 +56,7 @@
 
         <div class="input_title">
           <label for="">Number of People</label>
-          <span class="error_message">Can't be zero</span>
+          <span class="error_message-2">Can't be zero</span>
         </div>
 
         <div class="input_field">

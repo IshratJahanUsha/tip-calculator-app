@@ -147,7 +147,7 @@ input.success {
     color: var(--Very-dark-cyan);
 }
 
-.gtip_input .tip_amount.active {
+.tip_input .tip_amount.active {
     background-color: var(--Strong-cyan);
     color: var(--Very-dark-cyan);
 }
@@ -165,12 +165,16 @@ input.success {
     justify-content: space-between;
 }
 
-.error_message{
+.error_message-1,
+.error_message-2
+{
     color: rgb(253, 124, 101);
     letter-spacing: 1px;
     visibility: hidden;
 }
-.error_message.active{
+.error_message-1.active,
+.error_message-2.active
+{
     visibility: visible;
 }
 

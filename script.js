@@ -1,4 +1,5 @@
-const errorMessage = document.querySelector('.error_message'),
+const errorMessage = document.querySelector('.error_message-1'),
+    errorMessage2 = document.querySelector('.error_message-2'),
     allInput = document.querySelectorAll('input'),
 
     totalBill = document.querySelector('.total_bill'),
@@ -12,11 +13,9 @@ const errorMessage = document.querySelector('.error_message'),
     resetBtn = document.querySelector('.reset_btn')
 
 let tipAmount;
-
+totalPeople.value = 1;
 
 let totalBillAmount = () => {
-
-    // perPersonBillAmount.innerHTML = ''
 
     let perPersonTip = tipAmount / totalPeople.value
 
@@ -44,10 +43,10 @@ totalPeople.addEventListener('input', () => {
 
     if (totalPeople.value == 0 || totalPeople.value < 0) {
 
-        errorMessage.classList.add('active')
+        errorMessage2.classList.add('active')
 
     } else {
-        errorMessage.classList.remove('active')
+        errorMessage2.classList.remove('active')
     }
 });
 
@@ -67,33 +66,43 @@ tipAmountBtns.forEach((button, num) => {
         button.classList.add('active')
         customTipBtn.classList.remove('error')
         customTipBtn.classList.remove('success')
+        customTipBtn.value = ''
         checkactive(num)
     })
 })
 
 tipAmountBtns[0].click()
-tipAmountBtns[0].classList.add('active')
 
-totalBill.addEventListener('focusout', () => {
-    tipAmountBtns[0].click()
-})
+// totalBill.addEventListener('focusout', () => {
+//     tipAmountBtns[0].click()
+// })
 
 
 // for custom tip
-let customTipAmount = () => {
-    tipAmount = totalBill.value * (customTipBtn.value / 100)
-}
-
-customTipBtn.addEventListener('focusin', () => {
+customTipBtn.addEventListener('input', () => {
     tipAmountBtns.forEach((b) => {
         b.classList.remove('active')
     })
 })
 
+customTipBtn.addEventListener('input', () => {
+    tipAmount = totalBill.value * (customTipBtn.value / 100)
+})
+
+// let customTipAmount = () => {
+//     tipAmount = totalBill.value * (customTipBtn.value / 100)
+// }
+
+// customTipBtn.addEventListener('input', () => {
+//     tipAmountBtns.forEach((b) => {
+//         b.classList.remove('active')
+//     })
+// })
+
 
 // error for all input
 allInput.forEach((input) => {
-    input.addEventListener('focusout', () => {
+    input.addEventListener('input', () => {
         if (input.value < 0 || input.value == 0) {
             input.classList.remove('success')
             input.classList.add('error')
@@ -104,6 +113,7 @@ allInput.forEach((input) => {
     })
 })
 
+
 resetBtn.addEventListener('click', () => {
     allInput.forEach((input) => {
         input.value = ''
@@ -112,3 +122,4 @@ resetBtn.addEventListener('click', () => {
     })
     tipAmountBtns[0].click()
 })
+
