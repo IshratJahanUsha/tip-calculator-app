@@ -46,13 +46,15 @@ tipAmountBtns.forEach((button, num) => {
         customTipBtn.classList.remove('success')
         customTipBtn.value = ''
         checkactive(num)
+        totalBillAmount()
     })
 })
 
 tipAmountBtns[0].click()
 
-totalBill.addEventListener('focusout', () => {
+totalBill.addEventListener('input', () => {
     tipAmountBtns[0].click()
+    totalBillAmount()
 })
 
 
@@ -64,8 +66,10 @@ customTipBtn.addEventListener('input', () => {
 })
 
 customTipBtn.addEventListener('input', () => {
-    tipAmount = totalBill.value * (customTipBtn.value / 100)
-    console.log(tipAmount)
+    // let customTip = customTipBtn.value
+    tipAmount = totalBill.value * (customTipBtn.value/ 100)
+    totalBillAmount()
+    console.log(customTipBtn.value)
 })
 
 
@@ -80,7 +84,6 @@ totalBill.addEventListener('input', () => {
         errorMessage.classList.remove('active')
     }
 });
-
 totalPeople.addEventListener('input', () => {
 
     if (totalPeople.value == 0 || totalPeople.value < 0) {
@@ -92,16 +95,6 @@ totalPeople.addEventListener('input', () => {
     }
 });
 
-// let customTipAmount = () => {
-//     tipAmount = totalBill.value * (customTipBtn.value / 100)
-// }
-
-// customTipBtn.addEventListener('input', () => {
-//     tipAmountBtns.forEach((b) => {
-//         b.classList.remove('active')
-//     })
-// })
-
 
 // error for all input
 allInput.forEach((input) => {
@@ -112,6 +105,7 @@ allInput.forEach((input) => {
         } else {
             input.classList.remove('error')
             input.classList.add('success')
+            totalBillAmount()
         }
     })
 })
@@ -125,4 +119,5 @@ resetBtn.addEventListener('click', () => {
     })
     tipAmountBtns[0].click()
 })
+
 
